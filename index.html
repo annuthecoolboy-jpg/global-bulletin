@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Global Bulletin</title>
+  <meta name="description" content="A news homepage template with a searchable country filter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="header-left">
+        <button class="menu-button" id="menuButton" type="button" aria-expanded="false" aria-controls="countryPanel" aria-label="Open country search">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="brand" href="#top">Global Bulletin</a>
+      </div>
+
+      <div class="header-text">
+        <p class="top-label">News Homepage Template</p>
+        <p class="top-subtitle">Choose a country to show only that country's news.</p>
+      </div>
+    </header>
+
+    <aside class="country-panel" id="countryPanel" hidden>
+      <div class="panel-header">
+        <div>
+          <p class="panel-label">Country Search</p>
+          <h2>Find a country</h2>
+        </div>
+        <button class="close-panel" id="closePanel" type="button" aria-label="Close country search">Close</button>
+      </div>
+
+      <label class="search-wrap" for="countrySearch">
+        <span>Search countries</span>
+        <input id="countrySearch" type="search" placeholder="Type a country name">
+      </label>
+
+      <div class="country-list" id="countryList">
+        <button class="country-option is-active" type="button" data-country-filter="all">All News</button>
+        <button class="country-option" type="button" data-country-filter="united-states">United States</button>
+        <button class="country-option" type="button" data-country-filter="united-kingdom">United Kingdom</button>
+        <button class="country-option" type="button" data-country-filter="india">India</button>
+        <button class="country-option" type="button" data-country-filter="japan">Japan</button>
+        <button class="country-option" type="button" data-country-filter="brazil">Brazil</button>
+        <button class="country-option" type="button" data-country-filter="iran">Iran</button>
+      </div>
+    </aside>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Search By Country</p>
+          <h1>Show readers news from one country at a time.</h1>
+          <p class="hero-text">
+            Open the menu, search for a country, and click it to filter the stories below.
+            You can add your full country list later by copying the country buttons in the panel.
+          </p>
+        </div>
+
+        <div class="hero-note">
+          <p class="note-label">How to edit this later</p>
+          <ul>
+            <li>Add more country buttons in the search panel.</li>
+            <li>Give each news card a matching <code>data-country</code> value.</li>
+            <li>Add one <code>&lt;img&gt;</code> inside any news card when you want a headline picture.</li>
+            <li>Save the file and refresh the browser.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="news-board">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">Main Feed</p>
+            <h2 id="newsHeading">All News</h2>
+          </div>
+          <p class="section-note">
+            This section becomes the one place where all stories from the selected country appear.
+          </p>
+        </div>
+
+        <div class="news-grid" id="newsGrid">
+          <article class="news-card" data-country="united-states">
+            <img class="story-image" src="Images/Screenshot%202026-04-21%20071611.png" alt="Headline image for the United States story">
+            <p class="story-country">United States</p>
+            <h3>Main headline for the United States goes here.</h3>
+            <p>Replace this text with your own news summary.</p>
+          </article>
+
+          <article class="news-card" data-country="united-kingdom">
+            <img class="story-image" src="Images/Screenshot%202026-04-21%20071611.png" alt="Headline image for the United Kingdom story">
+            <p class="story-country">United Kingdom</p>
+            <h3>Main headline for the United Kingdom goes here.</h3>
+            <p>Replace this text with your own news summary.</p>
+          </article>
+
+          <article class="news-card" data-country="india">
+            <img class="story-image" src="Images/Screenshot%202026-04-21%20071611.png" alt="Headline image for the India story">
+            <p class="story-country">India</p>
+            <h3>Main headline for India goes here.</h3>
+            <p>Replace this text with your own news summary.</p>
+          </article>
+
+          <article class="news-card" data-country="japan">
+            <img class="story-image" src="Images/Screenshot%202026-04-21%20071611.png" alt="Headline image for the Japan story">
+            <p class="story-country">Japan</p>
+            <h3>Main headline for Japan goes here.</h3>
+            <p>Replace this text with your own news summary.</p>
+          </article>
+
+          <article class="news-card" data-country="brazil">
+            <img class="story-image" src="Images/Screenshot%202026-04-21%20071611.png" alt="Headline image for the Brazil story">
+            <p class="story-country">Brazil</p>
+            <h3>Main headline for Brazil goes here.</h3>
+            <p>Replace this text with your own news summary.</p>
+          </article>
+
+          <article class="news-card" data-country="united-states">
+            <img class="story-image" src="Images/Screenshot%202026-04-21%20071611.png" alt="Headline image for the second United States story">
+            <p class="story-country">United States</p>
+            <h3>Second United States story goes here.</h3>
+            <p>You can add multiple cards for the same country.</p>
+          </article>
+        </div>
+
+        <p class="empty-state" id="emptyState" hidden>No stories match that country yet.</p>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
